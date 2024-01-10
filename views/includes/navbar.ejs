@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-md bg-body-light sticky-top border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
+    <div class="navbar-nav explore-btn">
+      <a class="nav-link" href="/listings">Explore</a>
+    </div>
+    <div class="blank-div">hello</div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">WanderLust</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="space-element"></div>
+        <form class="d-flex search-bar" role="search">
+          <input
+            class="form-control me-2 search-inp"
+            type="search"
+            placeholder="Search destinations"
+            aria-label="Search"
+          />
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/listings/new"
+              >Add &nbsp;new &nbsp;listing</a
+            >
+          </li>
+          <% if (!currUser) { %>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/login"
+              ><b>Login</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/signup"
+              ><b>Signup</b></a
+            >
+          </li>
+          <% } else { %>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/logout"
+              ><b>Logout</b></a
+            >
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
